@@ -1,0 +1,37 @@
+<div class="dashboard-container">
+    <h1 class="dashboard-title">Bienvenido al Dashboard</h1>
+    <p class="dashboard-message">Estás autenticado.</p>
+    
+    <div class="token-info">
+      <p><strong>Tu token de autenticación es:</strong></p>
+      <pre class="token-display">{{ token }}</pre>
+    </div>
+  
+    <button class="logout-button" (click)="logout()">Cerrar sesión</button>
+
+    <div class="security-methods">
+      <h2>Métodos de Seguridad</h2>
+      <ul>
+        <li>
+          <strong>Hash de Contraseña:</strong> {{ passwordHash }}
+          <p>Se utiliza bcryptjs para generar un hash seguro de la contraseña. Esto asegura que las contraseñas no se almacenen en texto plano y sean difíciles de descifrar en caso de una brecha de datos.</p>
+        </li>
+        <li>
+          <strong>Token Generado:</strong> {{ token }}
+          <p>Se genera un token aleatorio para autenticar al usuario. Esto proporciona una capa adicional de seguridad al verificar la identidad del usuario en cada solicitud.</p>
+        </li>
+        <li>
+          <strong>Intentos de Inicio de Sesión:</strong> {{ loginAttempts }}
+          <p>Se rastrean los intentos de inicio de sesión para prevenir ataques de fuerza bruta. Si se detectan demasiados intentos fallidos, el usuario es bloqueado temporalmente.</p>
+        </li>
+        <li>
+          <strong>Entrada Sanitizada:</strong> {{ sanitizedInput }}
+          <p>Se sanitiza la entrada del usuario para prevenir ataques XSS (Cross-Site Scripting). Esto asegura que cualquier entrada del usuario no pueda ejecutar scripts maliciosos en el navegador.</p>
+        </li>
+        <li>
+          <strong>Protección contra Inyecciones SQL:</strong> {{ protectedInput }}
+          <p>Se protege la entrada del usuario contra inyecciones SQL. Esto asegura que las consultas a la base de datos no puedan ser manipuladas para ejecutar comandos maliciosos.</p>
+        </li>
+      </ul>
+    </div>
+</div>

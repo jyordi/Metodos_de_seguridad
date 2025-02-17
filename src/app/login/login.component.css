@@ -1,0 +1,149 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0; /* Asegurarse de que no haya margen en el cuerpo */
+}
+
+.login-container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    margin: auto; /* Centrar el contenedor */
+    transition: all 0.3s ease;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.login-container:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+    animation: slideIn 1s ease-in-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+label {
+    font-size: 14px;
+    color: #555;
+    animation: fadeIn 1s ease-in-out;
+}
+
+input.form-control {
+    padding: 12px;
+    font-size: 16px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 5px;
+    transition: border-color 0.3s ease;
+    animation: fadeIn 1s ease-in-out;
+}
+
+input.form-control:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+button.btn-submit {
+    padding: 12px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    animation: fadeIn 1s ease-in-out;
+}
+
+button.btn-submit:hover {
+    background-color: #45a049;
+}
+
+button.btn-submit:disabled {
+    background-color: #ccc;
+}
+
+.error-message {
+    margin-top: 10px;
+    color: red;
+    font-size: 14px;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.token-info {
+    margin-top: 20px;
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 4px;
+    font-family: 'Courier New', Courier, monospace;
+    display: none; /* Inicialmente no se muestra */
+}
+
+.token-info pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.token-info.active {
+    display: block;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.login-attempts-info {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+    animation: fadeIn 1s ease-in-out;
+}
